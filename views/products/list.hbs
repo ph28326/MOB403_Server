@@ -1,0 +1,23 @@
+
+<form action="search">
+  <div class="mb-3 mt-3">
+    <input type="key" class="form-control" id="key" placeholder="Enter search" name="key">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{{#each products}}
+
+<div class="card col-2" style="width: 18rem; margin: 15px;">
+    <img class="card-img-top" style="padding: 10px;" src="http://localhost:9999/images/products/{{this.image}}"
+        alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title" style="max-height: 30px;">{{this.name}}</h5>
+        <h5 style="font-size: medium;"><s>{{this.price0}}</s></h5>
+        <h4>{{this.price1}}</h4>
+        <a href="/update-product/{{this._id}}" class="btn btn-primary btn-sm">sửa</a>
+        <a href="/del-product/{{this._id}}" onclick="return confirm('delete: {{this.name}}?')"
+            class="btn btn-danger btn-sm">xóa</a>
+    </div>
+</div>
+
+{{/each}}

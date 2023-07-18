@@ -1,0 +1,56 @@
+<script type="text/javascript">
+    var sexSelect = document.getElementsByName('sex');
+    function setSex(value) {
+        alert(sexSelect.forEach.length);
+        sexSelect.length
+    }
+</script>
+<form action="/add-user" method="POST" enctype="multipart/form-data" autocomplete="on">
+    <label>
+        <h3>Add user</h3>
+    </label>
+    <input type="hidden" name="id" value="{{user._id}}">
+    <div class="form-group">
+        <label for="">full name</label>
+        <input type="text" name="fullName" value="{{user.fullName}}" class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="">email</label>
+        <input type="text" name="email" value="{{user.email}}" class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="">password</label>
+        <input type="text" name="password" value="{{user.password}}" class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="">age</label>
+        <input type="text" name="age" value="{{user.age}}" class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="">danh mục</label>
+        <select name="sex">
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <label for="">phone</label>
+            <input type="text" name="phone" value="{{user.phone}}" class="form-control" placeholder="">
+        </div>
+        <div class="form-group col-sm-6">
+            <label for="">address</label>
+            <input type="text" name="address" value="{{user.address}}" class="form-control" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="">image</label>
+            <input id="" class="form-control" type="file" name="image">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">Submit</button>
+        <a href="/list-user" class="btn btn-primary">View users</a>
+    </div>
+</form>

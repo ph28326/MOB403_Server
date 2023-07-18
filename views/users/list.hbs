@@ -1,0 +1,41 @@
+<table class="table table-bordered text-center">
+    <tr>
+        <th>
+            <h3 class="text-center">VIEW USERS</h3>
+        </th>
+        <td><a href="/add-user" class="btn btn-primary">add user</a></td>
+    </tr>
+    <tr>
+        <th>IMAGE</th>
+        <th>FULL NAME</th>
+        <th>EMAIL</th>
+        <th>PASSWORD</th>
+        <th>AGE</th>
+        <th>SEX</th>
+        <th>PHONE</th>
+        <th>ADDRESS</th>
+        <th>ACTION</th>
+    </tr>
+
+    {{#each users}}
+    <tr>
+        <td>
+            <img class="rounded-circle" alt="null" src="http://localhost:9999/images/users/{{this.image}}"
+                data-holder-rendered="true" width="100px" height="100px">
+        </td>
+        <td class=" text-center">{{this.fullName}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.password}}</td>
+        <td>{{this.age}}</td>
+        <td>{{this.sex}}</td>
+        <td>{{this.phone}}</td>
+        <td>{{this.address}}</td>
+        <td>
+            <a href="/update-user/{{this._id}}" class="btn btn-primary btn-sm"> Edit</a>
+            <a href="/del-user/{{this._id}}" onclick="return confirm('Bạn có muốn xóa người dùng này?')" class="btn btn-danger btn-sm">
+                Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+
+</table>

@@ -1,0 +1,73 @@
+<script type="text/javascript">
+    var cateSelect = document.getElementsByName('category');
+    var cate = document.getElementsByName("categoryH");
+    function setCategory(value){
+        alert(cateSelect.forEach.length);  
+        cateSelect.length
+    }
+</script>
+<div class="shadow-lg p-3 mb-5 container bg-white rounded border">
+
+    <form action="/add-product" method="POST" style="background-color: white;padding: 30px;" enctype="multipart/form-data" autocomplete="off">
+        <label><h3>{{viewTitle}}</h3></label>
+        <input type="hidden" name="id" value="{{pro._id}}">
+        {{!-- <input type="text" onclick="setCategory(this.value)" name="categoryH" value="{{pro.category}}">
+        <input type="text" name="brandH" value="{{pro.brand}}"> --}}
+        <div class="form-group">
+            <label for="">Tên sản phẩm</label>
+            <input type="text" name="name" value="{{pro.name}}" class="form-control" placeholder="" >
+        </div>
+        <div class="form-row">
+            <div class="col-6">
+                <label for="">danh mục</label>
+                <select name="category">
+                    <option value="smartphone">Điện thoại thông minh</option>
+                    <option value="laptop">Máy tính xách tay</option>
+                    <option value="smartwatch">Đồng hồ thông minh</option>
+                    <option value="bluetooth speaker">Loa bluetooth</option>
+                    <option value="wireless headphones">Tai nghe bluetooth</option>
+                    <option value="power bank">Pin sạc dự phòng</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label for="">Thương hiệu</label>
+                <select name="brand" value="{{pro.brand}}">
+                    <option value="Samsung" selected="selected">Samsung</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Oppo">Oppo</option>
+                    <option value="Sony">Sony</option>
+                    <option value="Nokia">Nokia</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Realme">Realme</option>
+                    <option value="JBL">JBL</option>
+                    <option value="BeU">BeU</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="">Mô tả</label>
+            <input type="text" name="description" value="{{pro.description}}" class="form-control" placeholder="" required>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-6">
+                <label for="">Giá gốc</label>
+                <input type="text" name="price0" value="{{pro.price0}}" class="form-control" placeholder="" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="">Giá khuyến mãi</label>
+                <input type="text" name="price1" value="{{pro.price1}}" class="form-control" placeholder="" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">image</label>
+            <input id="" class="form-control" type="file" name="image">
+            <input type="hidden" value="{{pro.image}}"></input>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info">{{viewTitle}}</button>
+            <a href="/list-product" class="btn btn-primary">trang chủ</a>
+        </div>
+    </form>
+
+</div>
